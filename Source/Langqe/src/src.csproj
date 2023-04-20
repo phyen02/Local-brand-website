@@ -396,14 +396,10 @@
     <Content Include="Content\AdminAssets\images\small\12.png" />
     <Content Include="Content\AdminAssets\images\small\13.png" />
     <Content Include="Content\AdminAssets\images\small\14.png" />
-    <Content Include="Content\AdminAssets\images\small\flag-01.png" />
-    <Content Include="Content\AdminAssets\images\small\flag-02.png" />
-    <Content Include="Content\AdminAssets\images\small\flag-03.png" />
-    <Content Include="Content\AdminAssets\images\small\flag-04.png" />
-    <Content Include="Content\AdminAssets\images\small\flag-05.png" />
-    <Content Include="Content\AdminAssets\images\small\flag-06.png" />
+    <Content Include="Content\AdminAssets\images\small\english.jpg" />
     <Content Include="Content\AdminAssets\images\small\img-1.jpg" />
     <Content Include="Content\AdminAssets\images\small\jpg.svg" />
+    <Content Include="Content\AdminAssets\images\small\vietnam.png" />
     <Content Include="Content\AdminAssets\images\small\xml.svg" />
     <Content Include="Content\AdminAssets\images\small\zip.svg" />
     <Content Include="Content\AdminAssets\images\sort_asc.png" />
