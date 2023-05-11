@@ -1,0 +1,24 @@
+﻿@model WebBanHangOnline.Models.ThongKeModel
+@if (Model != null)
+{
+  <div class="thongke">
+      <table class="table">
+          <tr>
+              <td>Hôm nay</td>
+              <td>@Model.HomNay</td>
+          </tr>
+          <tr>
+              <td>Hôm qua</td>
+              <td>@Model.HomQua</td>
+          </tr>
+          <tr>
+              <td>Tuần này</td>
+              <td>@Model.TuanNay</td>
+          </tr>
+          <tr>
+              <td>Số người Online</td>
+              <td>@ViewBag.Visitors_online</td>
+          </tr>
+      </table>
+  </div>
+}

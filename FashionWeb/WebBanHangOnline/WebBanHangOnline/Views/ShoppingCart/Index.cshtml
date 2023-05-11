@@ -1,0 +1,48 @@
+﻿
+@using WebBanHangOnline.Common
+@{
+    ViewBag.Title = "Giở hàng";
+
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/categories_responsive.css">
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Giỏ hàng</a></li>
+                </ul>
+            </div>
+
+            <!-- Sidebar -->
+            <!-- Main Content -->
+
+            <div class="row">
+                <div class="col-md-12" id="load_data">
+                  @Html.Action("Partial_Item_Cart", "ShoppingCart")
+                </div>
+                <div class="col-md-12">
+                    @if (ViewBag.CheckCart != null)
+                    {
+                        <div class="text-right">
+                            <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
+                            <a href="/thanh-toan" class="btn btn-success">Thanh toán</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/assets/js/categories_custom.js"></script>
+}
