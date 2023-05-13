@@ -1,33 +1,229 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Langqe";
+    ViewBag.SeoDescription = "Fashion Online Store";
 }
+<!-- Font awesome -->
+<!-- Bootstrap -->
+<!-- SmartMenus jQuery Bootstrap Addon CSS -->
+<!-- Product view slider-->
+<!-- slick slider -->
+<!-- price picker slider -->
+<!-- Theme color -->
+<link id="switcher" href="~/Content/assets/styles/default-theme.css" rel="stylesheet">
+<!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
+<!-- Top Slider CSS -->
+<link href="~/Content/assets/styles/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
-
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+<!-- Main style sheet -->
+<link href="styles/style.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="~/Content/assets/styles/main_styles.css">
+<!-- Slider -->
+<!--<div class="main_slider" style="background-image:url(Content/assets/images/slider_1.jpg)">
+    <div class="container fill_height">
+        <div class="row align-items-center fill_height">
+            <div class="col">
+                <div class="main_slider_content">
+                    <h6>Spring / Summer Collection 2017</h6>
+                    <h1>Get up to 30% Off New Arrivals</h1>
+                    <div class="red_button shop_now_button"><a href="#">shop now</a></div>
+                </div>
+            </div>
+        </div>
     </div>
-</main>
+</div>--!>
+<!-- Start slider -->
+<section id="aa-slider">
+    <div class="aa-slider-area">
+        <div id="sequence" class="seq">
+            <div class="seq-screen">
+                <ul class="seq-canvas">
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="~/Content/assets/images/slider_1.jpg" alt="Men slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Tiết kiệm tới 75% </span>
+                            <h2 data-seq>Bộ sưu tập nam</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">MUA NGAY</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="~/Content/assets/img/slider/2.jpg" alt="Wristwatch slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Tiết kiệm đến 40%</span>
+                            <h2 data-seq>Bộ sưu tập đồng hồ </h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">MUA NGAY</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="~/Content/assets/img/slider/3.jpg" alt="Women Jeans slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Tiết kiệm đến 75%</span>
+                            <h2 data-seq>Jeans</h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">MUA NGAY</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="~/Content/assets/img/slider/4.jpg" alt="Shoes slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Tiết kiệm tới 75%</span>
+                            <h2 data-seq>Giày Độc Quyền </h2>
+                            <p data-seq>Khách hàng hài lòng và ủng hộ nhà phát triển đến hôm nay.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">MUA NGAY</a>
+                        </div>
+                    </li>
+                    <!-- single slide item -->
+                    <li>
+                        <div class="seq-model">
+                            <img data-seq src="~/Content/assets/img/slider/5.jpg" alt="Male Female slide img" />
+                        </div>
+                        <div class="seq-title">
+                            <span data-seq>Tiết kiệm đến 50%</span>
+                            <h2 data-seq>Bộ sưu tập đáng lưu ý </h2>
+                            <p data-seq>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.</p>
+                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">MUA NGAY</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- slider navigation btn -->
+            <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                <a type="button" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                <a type="button" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+            </fieldset>
+        </div>
+    </div>
+</section>
+<!-- / slider -->
+<!-- Banner -->
+@Html.Action("MenuProductCategory", "Menu")
+
+<!-- New Arrivals -->
+
+<div class="new_arrivals">
+    <div class="container">
+        @Html.Action("MenuArrivals", "Menu")
+    </div>
+</div>
+
+<!-- Deal of the week -->
+
+<div class="deal_ofthe_week">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="deal_ofthe_week_img">
+                    <img src="~/Content/assets/images/deal_ofthe_week.png" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 text-right deal_ofthe_week_col">
+                <div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
+                    <div class="section_title">
+                        <h2>ƯU ĐÃI TRONG TUẦN</h2>
+                    </div>
+                    <ul class="timer">
+                        <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="day" class="timer_num">03</div>
+                            <div class="timer_unit">Ngày</div>
+                        </li>
+                        <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="hour" class="timer_num">15</div>
+                            <div class="timer_unit">Giờ</div>
+                        </li>
+                        <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="minute" class="timer_num">45</div>
+                            <div class="timer_unit">Phút</div>
+                        </li>
+                        <li class="d-inline-flex flex-column justify-content-center align-items-center">
+                            <div id="second" class="timer_num">23</div>
+                            <div class="timer_unit">Giây</div>
+                        </li>
+                    </ul>
+                    <div class="red_button deal_ofthe_week_button"><a href="#">MUA NGAY</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Best Sellers -->
+@Html.Action("Partial_ProductSales", "Products")
+<!-- Benefit -->
+
+<div class="benefit">
+    <div class="container">
+        <div class="row benefit_row">
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-truck" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>Giao hàng miễn phí </h6>
+                        <!--  <p>Suffered Alteration in Some Form</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6> Thanh toán khi nhận hàng </h6>
+                        <p>The Internet Tend To Repeat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-undo" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>Đổi trả trong 30 ngày </h6>
+                        <p>Making it Look Like Readable</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 benefit_col">
+                <div class="benefit_item d-flex flex-row align-items-center">
+                    <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                    <div class="benefit_content">
+                        <h6>Mở cửa mọi ngày trong tuần</h6>
+                        <p>8AM - 09PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="~/Content/assets/styles/js/bootstrap.js"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="~/Content/assets/styles/js/jquery.smartmenus.js"></script>
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="~/Content/assets/styles/js/jquery.smartmenus.bootstrap.js"></script>
+<!-- To Slider JS -->
+<script src="~/Content/assets/styles/js/sequence.js"></script>
+<script src="~/Content/assets/styles/js/sequence-theme.modern-slide-in.js"></script>
+<!-- Product view slider -->
+<script type="text/javascript" src="~/Content/assets/styles/js/jquery.simpleGallery.js"></script>
+<script type="text/javascript" src="~/Content/assets/styles/js/jquery.simpleLens.js"></script>
+<!-- slick slider -->
+<script type="text/javascript" src="~/Content/assets/styles/js/slick.js"></script>
+<!-- Price picker slider -->
+<script type="text/javascript" src="~/Content/assets/styles/js/nouislider.js"></script>
+<!-- Custom js -->
+<script src="~/Content/assets/styles/js/custom.js"></script>
+<!-- Blogs -->
+@Html.Action("Partial_News_Home", "News")
