@@ -11,7 +11,7 @@ namespace src.Models.EF
     public class Adv : CommonAbstract
     {
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         [StringLength(150)]

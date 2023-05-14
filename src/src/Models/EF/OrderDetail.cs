@@ -11,13 +11,13 @@ namespace src.Models.EF
     public class OrderDetail
     {
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public decimal Price { get; set; }
-        public int Quantity { get; set; }
-        public virtual Order Order { get; set; }
+        public int Quantity { get; set;}
+        public virtual Order Oder { get; set; }
         public virtual Product Product { get; set; }
     }
 }

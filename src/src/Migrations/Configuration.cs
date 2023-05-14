@@ -1,4 +1,4 @@
-namespace src.Migrations
+﻿namespace src.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -12,11 +12,11 @@ namespace src.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(src.ApplicationDbContext context)
+        protected override void Seed(src.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
         }
     }
