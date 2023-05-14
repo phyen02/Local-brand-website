@@ -180,12 +180,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202305140509155_CreatedDatabase.cs" />
-    <Compile Include="Migrations\202305140509155_CreatedDatabase.designer.cs">
-      <DependentUpon>202305140509155_CreatedDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202305141248190_CreateDatabase.cs" />
+    <Compile Include="Migrations\202305141248190_CreateDatabase.designer.cs">
+      <DependentUpon>202305141248190_CreateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305141249243_UpdateCategory.cs" />
+    <Compile Include="Migrations\202305141249243_UpdateCategory.designer.cs">
+      <DependentUpon>202305141249243_UpdateCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Common.cs" />
     <Compile Include="Models\CommonAbstract.cs" />
     <Compile Include="Models\EF\Adv.cs" />
     <Compile Include="Models\EF\Category.cs" />
@@ -8437,6 +8442,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\sample.cshtml" />
     <None Include="Scripts\jquery-3.6.4.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.4.js" />
     <Content Include="Scripts\jquery-3.6.4.min.js" />
@@ -8532,8 +8539,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202305140509155_CreatedDatabase.resx">
-      <DependentUpon>202305140509155_CreatedDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305141248190_CreateDatabase.resx">
+      <DependentUpon>202305141248190_CreateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305141249243_UpdateCategory.resx">
+      <DependentUpon>202305141249243_UpdateCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

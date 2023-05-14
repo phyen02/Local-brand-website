@@ -34,15 +34,16 @@
             <!--Side bar-->
             @Html.Partial("_PartialSideBar");
         </div>
+
+        <!-- Top bar -->
         <div class="iq-top-navbar">
             <div class="iq-navbar-custom">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                         <i class="ri-menu-line wrapper-menu"></i>
-                        <a href="~/Content/clients/backend/index.html" class="header-logo">
+                        <a href="/Admin/Home/Index" class="header-logo">
                             <img src="~/Content/images/logo/logo.png" class="img-fluid rounded-normal" alt="logo">
                             <h5 class="logo-title ml-3">LaqDashBoard</h5>
-
                         </a>
                     </div>
                     <div class="iq-search-bar device-search">
@@ -113,10 +114,35 @@
             </div>
         </div>
 
-
+        <!-- Order's pop up -->
+        <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="popup text-left">
+                            <h4 class="mb-3">Tạo đơn hàng mới</h4>
+                            <div class="content create-workform bg-body">
+                                <div class="pb-3">
+                                    <label class="mb-2">Email</label>
+                                    <input type="text" class="form-control" placeholder="Nhập tên hoặc email">
+                                </div>
+                                <div class="col-lg-12 mt-4">
+                                    <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                        <div class="btn btn-primary mr-4" data-dismiss="modal">Huỷ</div>
+                                        <div class="btn btn-outline-primary" data-dismiss="modal">Tạo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         @RenderBody()
     </div>
     <!-- Wrapper End-->
+
+    <!-- Footer -->
     <footer class="iq-footer">
         <div class="container-fluid">
             <div class="card">

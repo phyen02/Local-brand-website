@@ -90,5 +90,6 @@ D:\Github\Local-brand-website\src\src\obj\Debug\src.csproj.CoreCompileInputs.cac
 D:\Github\Local-brand-website\src\src\obj\Debug\src.csproj.CopyComplete
 D:\Github\Local-brand-website\src\src\obj\Debug\src.dll
 D:\Github\Local-brand-website\src\src\obj\Debug\src.pdb
-D:\Github\Local-brand-website\src\src\obj\Debug\src.Migrations.CreatedDatabase.resources
+D:\Github\Local-brand-website\src\src\obj\Debug\src.Migrations.CreateDatabase.resources
 D:\Github\Local-brand-website\src\src\obj\Debug\src.csproj.GenerateResource.cache
+D:\Github\Local-brand-website\src\src\obj\Debug\src.Migrations.UpdateCategory.resources
