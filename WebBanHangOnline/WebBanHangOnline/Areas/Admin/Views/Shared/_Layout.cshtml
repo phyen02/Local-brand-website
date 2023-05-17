@@ -1,0 +1,172 @@
+﻿<!DOCTYPE HTML>
+<html lang="vi">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/images/logo/favicon.ico" />
+    <link rel="stylesheet" href="~/Content/clients/assets/css/backend-plugin.min.css">
+    <link rel="stylesheet" href="~/Content/clients/assets/css/backend.css?v=1.0.0">
+    <link rel="stylesheet" href="~/Content/clients/assets/vendor/fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/clients/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/clients/assets/vendor/remixicon/fonts/remixicon.css">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <script src="~/Scripts/autoNumeric-1.9.45.js"></script>
+</head>
+<body class="  ">
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center"></div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <div class="iq-sidebar  sidebar-default ">
+            <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
+                <!--Brand logo-->
+                <a href="#" class="header-logo">
+                    <img src="~/Content/images/logo/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">LaqDAS</h5>
+                </a>
+                <div class="iq-menu-bt-sidebar ml-0">
+                    <i class="las la-bars wrapper-menu"></i>
+                </div>
+            </div>
+            <!--Side bar-->
+            @Html.Partial("_PartiaSideBar");
+        </div>
+
+        <!-- Top bar -->
+        <div class="iq-top-navbar">
+            <div class="iq-navbar-custom">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
+                        <i class="ri-menu-line wrapper-menu"></i>
+                        <a href="/Admin/Home/Index" class="header-logo">
+                            <img src="~/Content/images/logo/logo.png" class="img-fluid rounded-normal" alt="logo">
+                            <h5 class="logo-title ml-3">LaqDashBoard</h5>
+                        </a>
+                    </div>
+                    <div class="iq-search-bar device-search">
+                        <form action="#" class="searchbox">
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-label="Toggle navigation">
+                            <i class="ri-menu-3-line"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                                <li>
+                                </li>
+                                <li class="nav-item nav-icon search-content">
+                                    <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <i class="ri-search-line"></i>
+                                    </a>
+                                    <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                        <form action="#" class="searchbox p-2">
+                                            <div class="form-group mb-0 position-relative">
+                                                <input type="text" class="text search-input font-size-12"
+                                                       placeholder="Tìm ở đây~">
+                                                <a href="#" class="search-link"><i class="las la-search"></i></a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="nav-item nav-icon dropdown caption-content">
+                                    <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img src="~/Content/images/user/1.png" class="img-fluid rounded" alt="user">
+                                    </a>
+                                    <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="card shadow-none m-0">
+                                            <div class="card-body p-0 text-center">
+                                                <div class="media-body profile-detail text-center">
+                                                    <img src="~/Content/images/page-img/profile-bg.jpg" alt="profile-bg"
+                                                         class="rounded-top img-fluid mb-4">
+                                                    <img src="~/Content/images/user/1.png" alt="profile-img"
+                                                         class="rounded profile-img img-fluid avatar-70">
+                                                </div>
+                                                <div class="p-3">
+                                                    <div class="d-flex align-items-center justify-content-center mt-3">
+                                                        <a href="/Admin/Account/Login" class="btn border">Đăng xuất</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Order's pop up -->
+        <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="popup text-left">
+                            <h4 class="mb-3">Tạo đơn hàng mới</h4>
+                            <div class="content create-workform bg-body">
+                                <div class="pb-3">
+                                    <label class="mb-2">Email</label>
+                                    <input type="text" class="form-control" placeholder="Nhập tên hoặc email">
+                                </div>
+                                <div class="col-lg-12 mt-4">
+                                    <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                        <div class="btn btn-primary mr-4" data-dismiss="modal">Huỷ</div>
+                                        <div class="btn btn-outline-primary" data-dismiss="modal">Tạo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+    <!-- Wrapper End-->
+    <!-- Footer -->
+    <footer class="iq-footer">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 text-right">
+                            <span class="mr-1">
+                                <script>document.write(new Date().getFullYear())</script>©
+                            </span> <a href="#" class="">LaqDashBoard</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Backend Bundle JavaScript -->
+    <script src="~/Content/clients/assets/js/backend-bundle.min.js"></script>
+    <!-- Table Treeview JavaScript -->
+    <script src="~/Content/clients/assets/js/table-treeview.js"></script>
+
+    <!-- Chart Custom JavaScript -->
+    <script src="~/Content/clients/assets/js/customizer.js"></script>
+
+    <!-- Chart Custom JavaScript -->
+    <script async src="~/Content/clients/assets/js/chart-custom.js"></script>
+
+    <!-- app JavaScript -->
+    <script src="~/Content/clients/assets/js/app.js"></script>
+
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+
+    <script src="~/Content/ckfinder/ckfinder.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

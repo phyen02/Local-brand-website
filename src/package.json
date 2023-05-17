@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "luxon": "^3.3.0",
-    "moment": "^2.29.4"
-  }
-}

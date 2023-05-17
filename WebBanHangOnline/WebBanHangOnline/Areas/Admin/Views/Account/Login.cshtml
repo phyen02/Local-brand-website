@@ -1,0 +1,121 @@
+﻿@model WebBanHangOnline.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="card-body login-card-body">
+    <p class="login-box-msg">Sign in to start your session</p>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true);
+        <div class="input-group mb-3">
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", @placeholder = "Tài khoản" })
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Mật khẩu" })
+            <input type="checkbox" id="showPass" />
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="icheck-primary">
+                    @*<input type="checkbox" id="remember">*@
+                    @Html.CheckBoxFor(x => x.RememberMe)
+                    <label for="remember">
+                        Remember Me
+                    </label>
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+            <!-- /.col -->
+        </div>
+    }
+
+
+    <!-- /.social-auth-links -->
+
+    <p class="mb-1">
+        <a href="#">I forgot my password</a>
+    </p>
+</div>
+
+
+@*<div class="container">
+        <div class="row align-items-center justify-content-center height-self-center">
+            <div class="col-lg-8">
+                <div class="card auth-card">
+                    <div class="card-body login-card-body">
+                        <div class="d-flex align-items-center auth-content">
+                            <div class="col-lg-7 align-self-center">
+                                <div class="p-3">
+                                    <h2 class="mb-2">Đăng nhập</h2>
+                                    <p>Login to stay connected.</p>
+                                    <form>
+                                        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true);
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="floating-label form-group">
+                                                        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", @placeholder = "Tài khoản" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="floating-label form-group">
+                                                        @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Mật khẩu" })
+                                                        <input type="checkbox" id="showPass" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="icheck-primary">
+                                                        @Html.CheckBoxFor(x => x.RememberMe)
+                                                        <label for="remember">
+                                                            Lưu đăng nhập
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                        }
+                                        <p class="mb-1">
+                                            <a href="#">Quên mật khẩu</a>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 content-right">
+                                <img src="~/Content/images/login/01.png" class="img-fluid image-right" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#showPass").change(function () {
+                var checked = $(this).is(":checked");
+                if (checked) {
+                    $("#Password").attr("type", "text");
+                } else {
+                    $("#Password").attr("type", "password");
+                }
+            });
+
+        });
+    </script>
+}

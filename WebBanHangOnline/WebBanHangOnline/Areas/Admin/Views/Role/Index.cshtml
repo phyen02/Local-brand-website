@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+@model IEnumerable<IdentityRole>
+@{
+    ViewBag.Title = "Danh sách quyền";
+}
+
+<div class="content-page">
+    <div class="container-fluid">
+        <!-- Page start  -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Danh sách quyền</h3>
+
+                <div class="card-tools">
+                    <a href="/Admin/Role/Create" class="btn btn-success">Thêm mới</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            var i = 1;
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@item.Name</td>
+                                    <td></td>
+                                </tr>
+                                i++;
+                            }
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+
+            </div>
+            <!-- /.card-footer-->
+        </div>
+        <!-- Page end  -->
+    </div>
+</div>

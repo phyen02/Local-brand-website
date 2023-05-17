@@ -1,0 +1,97 @@
+﻿@model WebBanHangOnline.Models.EF.ProductCategory
+@{
+    ViewBag.Title = "Thêm mới danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-page">
+    <div class="container-fluid add-form-list">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Thêm danh mục sản phẩm mới</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Add", "ProductCategory", FormMethod.Post, new { }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <form action="page-list-product-category.html" data-toggle="validator">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tiêu đề</label>
+                                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Tiêu đề" })
+                                            @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Alias</label>
+                                            @Html.TextBoxFor(x => x.Alias, new { @class = "form-control", @placeholder = "Alias" })
+                                            @Html.ValidationMessageFor(x => x.Alias, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label>Ảnh</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                @Html.TextBoxFor(x => x.Icon, new { @id = "txtImage", @class = "form-control" })
+                                            </div>
+                                            <div class="input-group-append">
+                                                <input type="button" value="Tải ảnh" onclick="BrowseServer('txtImage');" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tên SEO</label>
+                                            @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Mô tả SEO</label>
+                                            @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Từ khoá SEO</label>
+                                            @Html.TextAreaFor(x => x.SeoKeywords, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/Admin/ProductCategory" class="btn btn-danger">Quay lại</a>
+                                <button type="submit" class="btn btn-primary mr-2">Thêm</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page end  -->
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '/content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+        function BrowseServer(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                document.getElementById(field).value = fileUrl;
+            };
+            finder.popup();
+        }
+
+    </script>
+}

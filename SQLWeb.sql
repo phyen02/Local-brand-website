@@ -1,132 +1,125 @@
-CREATE DATABASE WebBanHang
+CREATE DATABASE Fashiondb
 GO
 
-USE WebBanHang
+USE Fashiondb
 go
 
-DROP DATABASE WebBanHang
-
-CREATE TABLE Menu
+CREATE TABLE tb_Category
 (
-	MenuId int identity(1,1) primary key not null,
-	Title nvarchar(150),
+	Id int identity(1,1) primary key not null,
+	Title nvarchar(150) not null,
+	Alias nvarchar(150) not null,
 	Description nvarchar(500),
-	Position int,
+	Position int not null,
 	SeoTitle nvarchar(250),
 	SeoDescription nvarchar(550),
 	SeoKeywords nvarchar(250),
-	CreatedDate datetime,
+	CreatedDate datetime not null,
 	CreatedBy nvarchar(150),
-	ModifierDate datetime,
-	ModifierBy nvarchar(150)
+	ModifiedDate datetime not null,
+	ModifiedBy nvarchar(150)
 )
 GO
 
 -- Advertisment
-CREATE TABLE Avd
+CREATE TABLE tb_Avd
 (
-	AvdId int identity(1,1) primary key not null,
-	Title nvarchar(150),
+	Id int identity(1,1) primary key not null,
+	Title nvarchar(150) not null,
 	Description nvarchar(500),
 	Image nvarchar(500),
-	Type int,
+	Type int not null,
 	Link nvarchar(500),
-	CreatedDate datetime,
+	CreatedDate datetime not null,
 	CreatedBy nvarchar(150),
-	ModifierDate datetime,
-	ModifierBy nvarchar(150)
+	ModifiedDate datetime not null,
+	ModifiedBy nvarchar(150)
 )
 GO
 
-CREATE TABLE ProductCategory
+CREATE TABLE tb_ProductCategory
 (
-	CateId int identity(1,1) primary key not null,
-	Title nvarchar(150),
+	Id int identity(1,1) primary key not null,
+	Title nvarchar(150) not null,
 	Description nvarchar(500),
 	Icon nvarchar(500),
-	CreatedDate datetime,
+	CreatedDate datetime not null,
 	CreatedBy nvarchar(150),
-	ModifierDate datetime,
-	ModifierBy nvarchar(150)
+	ModifiedDate datetime not null,
+	ModifiedBy nvarchar(150),
+	SeoTitle nvarchar(250),
+	SeoDescription nvarchar(550),
+	SeoKeywords nvarchar(250),
+	Alias nvarchar(150) not null,
 )
 GO
 
-CREATE TABLE Product
+CREATE TABLE tb_Product
 (
-	ProductId int identity(1,1) primary key not null,
-	CateId int,
-	Title nvarchar(150),
+	Id int identity(1,1) primary key not null,
+	ProductCategoryId int not null,
+	Title nvarchar(150) not null,
+	Alias nvarchar(150),
+	ProductCode nvarchar(MAX),
 	Description nvarchar(500),
 	Detail nvarchar(MAX),
 	SeoTitle nvarchar(250),
 	SeoDescription nvarchar(550),
 	SeoKeywords nvarchar(250),
 	Image nvarchar(500),
-	Price decimal(18,2),
-	PriceSale decimal(18,2),
-	Quantity int,
-	CreatedDate datetime,
+	OriginalPrice decimal(18,2) not null,
+	Price decimal(18,2) not null,
+	PriceSale decimal(18,2) not null,
+	Quantity int not null,
+	CreatedDate datetime not null,
 	CreatedBy nvarchar(150),
-	ModifierDate datetime,
-	ModifierBy nvarchar(150),
+	ModifiedDate datetime not null,
+	ModifiedBy nvarchar(150),
+	IsHome bit not null,
+	IsSale bit not null,
+	IsFeature bit not null,
+	IsHot bit not null,
+	IsActive bit not null,
 	
-	CONSTRAINT fk_Product_CateId FOREIGN KEY (CateId) REFERENCES ProductCategory(CateId)
+	CONSTRAINT fk_Product_ProductCategoryId FOREIGN KEY (ProductCategoryId) REFERENCES tb_ProductCategory(Id)
 )
 GO
 
-CREATE TABLE New
+CREATE TABLE tb_Cart
 (
-	NewsId int identity(1,1) primary key not null,
-	CateId int,
-	Title nvarchar(150),
-	Description nvarchar(500),
-	Detail nvarchar(MAX),
-	SeoTitle nvarchar(250),
-	SeoDescription nvarchar(550),
-	SeoKeywords nvarchar(250),
-	Image nvarchar(500),
-	CreatedDate datetime,
-	CreatedBy nvarchar(150),
-	ModifierDate datetime,
-	ModifierBy nvarchar(150),
-	
-	CONSTRAINT fk_New_CateId FOREIGN KEY (CateId) REFERENCES ProductCategory(CateId)
-)
-GO
-
-CREATE TABLE Cart
-(
-	CartId int identity(1,1) primary key not null,
+	Id int identity(1,1) primary key not null,
 	Code nvarchar(50),
 	CustomerName nvarchar(150),
 	Phone nvarchar(12),
 	Address nvarchar(500),
 	TotalAmount decimal(18,0),
 	Quantity int,
-	CreatedDate datetime,
+	CreatedDate datetime not null,
 	CreatedBy nvarchar(150),
-	ModifierDate datetime,
-	ModifierBy nvarchar(150),
+	ModifiedDate datetime not null,
+	ModifiedBy nvarchar(150),
 )
 GO
 
-CREATE TABLE CartDetail
+CREATE TABLE tb_CartDetail
 (
-	CartDetailId int identity(1,1) primary key not null,
-	CartId int,
-	ProductId int,
-	Price decimal(18,0),
-	Quantity int,
+	Id int identity(1,1) primary key not null,
+	CartId int not null,
+	ProductId int not null,
+	Price decimal(18,0) not null,
+	Quantity int not null,
 
-	CONSTRAINT fk_CartId FOREIGN KEY (CartId) REFERENCES Cart(CartId),
-	CONSTRAINT fk_ProductId FOREIGN KEY (ProductId) REFERENCES Product(ProductId)
+	CONSTRAINT fk_CartId FOREIGN KEY (CartId) REFERENCES tb_Cart(Id),
+	CONSTRAINT fk_ProductId FOREIGN KEY (ProductId) REFERENCES tb_Product(Id)
 )
 GO
 
-CREATE TABLE SystemSetting
+CREATE TABLE tb_SystemSetting
 (
 	SettingKey nvarchar(50) primary key not null,
 	SettingValue nvarchar(MAX),
 	SettingDescription nvarchar(250)
 )
 GO
+
+DROP DATABASE Fashiondb

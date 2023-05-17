@@ -1,0 +1,78 @@
+﻿@model WebBanHangOnline.Models.CreateAccountViewModel
+@{
+    ViewBag.Title = "Thêm mới tài khoản";
+}
+
+
+<div class="content-page">
+    <div class="container-fluid add-form-list">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Thêm mới tài khoản</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Create", "Account", FormMethod.Post))
+                        {
+                            @Html.ValidationSummary(false)
+                            @Html.AntiForgeryToken()
+                            <form action="page-add-customers.html" data-toggle="validator">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tài khoản</label>
+                                            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Họ tên</label>
+                                            @Html.TextBoxFor(x => x.FullName, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Quyền</label>
+                                            @Html.DropDownListFor(x => x.Role, ViewBag.Role as SelectList, "- Chọn quyền -", new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Mật khẩu</label>
+                                            @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Nhập lại Mật khẩu</label>
+                                            @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/Admin/Account" class="btn btn-danger">Quay lại</a>
+                                <button type="submit" class="btn btn-primary mr-2">Thêm</button>
+                            </form>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page end  -->
+    </div>
+</div>

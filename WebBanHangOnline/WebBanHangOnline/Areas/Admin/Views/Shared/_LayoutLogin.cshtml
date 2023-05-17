@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin | Log in</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/assets/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/Content/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/assets/dist/css/adminlte.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/images/logo/favicon.ico" />
+    <link rel="stylesheet" href="~/Content/clients/assets/css/backend-plugin.min.css">
+    <link rel="stylesheet" href="~/Content/clients/assets/css/backend.css?v=1.0.0">
+    <link rel="stylesheet" href="~/Content/clients/assets/vendor/fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/clients/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/clients/assets/vendor/remixicon/fonts/remixicon.css">
+</head>
+<body class="hold-transition login-page">
+    @*<div id="loading">
+            <div id="loading-center"></div>
+        </div>
+        <div class="wrapper">
+            @RenderBody()
+        </div>*@
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="/admin"><b>Admin</b></a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            @RenderBody()
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Content/assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Content/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/assets/dist/js/adminlte.min.js"></script>
+    <!-- Backend Bundle JavaScript -->
+    <script src="~/Content/clients/assets/js/backend-bundle.min.js"></script>
+
+    <!-- Table Treeview JavaScript -->
+    <script src="~/Content/clients/assets/js/table-treeview.js"></script>
+
+    <!-- Chart Custom JavaScript -->
+    <script src="~/Content/clients/assets/js/customizer.js"></script>
+
+    <!-- Chart Custom JavaScript -->
+    <script async src="~/Content/clients/assets/js/chart-custom.js"></script>
+
+    <!-- app JavaScript -->
+    <script src="~/Content/clients/assets/js/app.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

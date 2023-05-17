@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity.EntityFramework
+@model IdentityRole
+@{
+    ViewBag.Title = "Thêm mới quyền";
+}
+
+<div class="content-page">
+    <div class="container-fluid">
+        <!-- Page start  -->
+        <div class="card-header">
+            <h3 class="card-title">Thêm mới Quyền</h3>
+
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("Create", "Role", FormMethod.Post))
+            {
+                @Html.ValidationSummary(false)
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label>Tên quyền</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Thêm mới</button>
+                </div>
+            }
+        </div>
+        <!-- Page end  -->
+    </div>
+</div>

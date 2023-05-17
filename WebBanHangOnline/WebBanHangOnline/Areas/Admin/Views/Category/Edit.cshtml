@@ -1,0 +1,73 @@
+﻿@model WebBanHangOnline.Models.EF.Category
+@{
+    ViewBag.Title = "Cập nhật danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-page">
+    <div class="container-fluid add-form-list">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Chỉnh sửa danh mục</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(x => x.Id)
+                            <form action="page-list-category.html" data-toggle="validator">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tên danh mục</label>
+                                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Nhập tên danh mục" })
+                                            @Html.ValidationMessageFor(x => x.Title, null, new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Mô tả</label>
+                                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Tên SEO</label>
+                                            @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Mô tả SEO</label>
+                                            @Html.TextAreaFor(x => x.SeoDescription, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Từ khoá SEO</label>
+                                            @Html.TextAreaFor(x => x.SeoKeywords, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Thứ tự</label>
+                                            @Html.TextBoxFor(x => x.Position, new { @class = "form-control", @Value = "1" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="/admin/category" class="btn btn-danger">Quay lại</a>
+                                <button type="submit" class="btn btn-primary mr-2">Cập nhật</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page end  -->
+    </div>
+</div>
