@@ -329,6 +329,6 @@ D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.cs
 D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.Migrations.InitialCreate.resources
 D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.csproj.GenerateResource.cache
 D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.csproj.CoreCompileInputs.cache
-D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.csproj.CopyComplete
 D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.dll
 D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHangOnline.pdb
+D:\Github\Local-brand-website\src\WebBanHangOnline\obj\Debug\WebBanHa.7E290493.Up2Date
